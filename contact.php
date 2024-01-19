@@ -1,11 +1,7 @@
 <html lang="fr">
     <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scal=1.0">
-        <script src="https://kit.fontawesome.com/d19b75fb51.js" crossorigin="anonymous"></script>
-        <title>Hugo MARCEAU - Contact</title>
-        <!--CSS-->
-        <link rel="stylesheet" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <div id="head-placeholder"></div>
     </head>
     <body>
         <!--**En-tête**-->
@@ -135,6 +131,11 @@
             </div>
         </footer>
         <!--Javascript-->
-        <script src="js/app.js"></script>
+        <script>
+            $(function(){
+                $("#nav-placeholder").load("navbar.html");
+                $("#head-placeholder").load("head.html");
+            });
+        </script>
     </body>
 </html>
