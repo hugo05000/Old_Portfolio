@@ -1,31 +1,12 @@
 <html lang="fr">
     <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scal=1.0">
-        <title>Hugo MARCEAU - Veille technologique</title>
-        <!--CSS-->
-        <link rel="stylesheet" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <div id="head-placeholder"></div>
     </head>
     <body>
         <!--**En-tête**-->
         <header>
-            <nav>
-                <div class="logo">
-                    <a href="index.html">Hugo MARCEAU</a>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="profil.html">Profil</a></li>
-                    <li><a href="stage.html">Stages</a></li>
-                    <li><a href="boite_a_outils.html">Boite à outils</a></li>
-                    <li><a href="veille.php">Veille</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                </ul>
-                <div class="burger">
-                    <div class="ligne1"></div>
-                    <div class="ligne2"></div>
-                    <div class="ligne3"></div>
-                </div>
-            </nav>
+            <div id="nav-placeholder"></div>
             <div class="wrapper enTeteVeille">
                 <div class="content">
                     <h1>Veille</h1>
@@ -100,6 +81,11 @@
             </div>
         </footer>
         <!--Javascript-->
-        <script src="js/app.js"></script>
+        <script>
+            $(function(){
+                $("#nav-placeholder").load("navbar.html");
+                $("#head-placeholder").load("head.html");
+            });
+        </script>
     </body>
 </html>
