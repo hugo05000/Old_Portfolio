@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
+:root {
+  --main-color: #007525;
+  --second-color: white;
+}
+
 *{
   margin: 0px;
   padding: 0px;
@@ -99,7 +104,7 @@ nav{
   justify-content: space-around;
   align-items: center;
   min-height: 5vh;
-  background-color: #C0392B;
+  background-color: var(--main-color);
   font-family: 'Poppins', sans-serif;
 }
 
@@ -857,6 +862,7 @@ textarea{
 
 .presentationDroiteProfil div{
   margin: 10px;
+  color: white;
 }
 
 .presentationDroiteProfil p{
@@ -873,7 +879,7 @@ textarea{
 
 .presentationDroiteProfil {
   width: 55%;
-  background-color: honeydew;
+  background-color: var(--main-color);
   margin-left: 5%;
 }
 
@@ -887,7 +893,7 @@ textarea{
 }
 
 .detailProfil h2 {
-  color:#ee7752
+  color: var(--main-color);
 }
 
 .experienceProfil h2{
@@ -904,7 +910,7 @@ textarea{
 }
 
 .detailExperienceProfil h3 {
-  color:#23d5ab
+  color: var(--main-color);
 }
 
 .detailExperienceProfil {
@@ -1019,25 +1025,25 @@ svg{
 @keyframes anim1{
   100%{
     stroke-dashoffset: 100;
-  };
+  }
 }
 
 @keyframes anim2{
   100%{
     stroke-dashoffset: 180;
-  };
+  }
 }
 
 @keyframes anim3{
   100%{
     stroke-dashoffset: 130;
-  };
+  }
 }
 
 @keyframes anim4{
   100%{
     stroke-dashoffset: 180;
-  };
+  }
 }
 
 .competencesProfil{
