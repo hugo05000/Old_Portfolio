@@ -6,23 +6,7 @@
     <body>
         <!--**En-tête**-->
         <header>
-            <nav>
-                <div class="logo">
-                    <a href="index.html">Hugo MARCEAU</a>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="profil.html">Profil</a></li>
-                    <li><a href="stage.html">Stages</a></li>
-                    <li><a href="boite_a_outils.html">Boite à outils</a></li>
-                    <li><a href="veille.php">Veille</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                </ul>
-                <div class="burger">
-                    <div class="ligne1"></div>
-                    <div class="ligne2"></div>
-                    <div class="ligne3"></div>
-                </div>
-            </nav>
+            <div id="nav-placeholder"></div>
             <div class="wrapper enTeteContact">
                 <div class="content">
                     <h1>Me contacter</h1>
@@ -38,7 +22,7 @@
                         <div>
                             <i class="fa-solid fa-map-location-dot fa-3x"></i>
                             <h4>Adresse</h4>
-                            <p>Gap 05000, France</p>
+                            <p>Aix-en-Provence 13090, France</p>
                         </div>
                     </div>
                     <div>
@@ -88,6 +72,7 @@
                                 <center><input type="submit" class="bn632-hover bn27" value="Envoyer"></center>
                             </div>
                         </form>
+                        <!--** Envoi du mail **-->
                         <?php
                         if (isset($_POST['message'])) {
                             if (!empty($_POST['nom']) and !empty($_POST['email']) and !empty($_POST['message'])) {
