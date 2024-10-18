@@ -11,6 +11,3 @@ L'objectif est de créer un "mini CV virtuel" pour faciliter l'accesibilité aux
 Simplement car ce portfolio est assez légé et ne mérite donc pas l'utilisation de quelconques framework ou CMS.
 (Cela me permet aussi de mettre un peu les mains dans du code...)
 
-
-
-
