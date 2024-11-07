@@ -5,7 +5,6 @@ const navSlide = () => {
     const nav = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-links li');
 
-
     burger.addEventListener('click',()=>{
         //Toggle Nav
         nav.classList.toggle('nav-active');
@@ -24,7 +23,12 @@ const navSlide = () => {
     });
 }
 
-navSlide();
+$(document).ready(function() {
+    $("#nav-placeholder").load("navbar.html", function() {
+        // Cette fonction sera exécutée après que la barre de navigation soit chargée
+        navSlide();
+    });
+});
 
 //Modals
 

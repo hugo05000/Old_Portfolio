@@ -10,11 +10,12 @@
                 $files = array_diff($files, array('.', '..','README.md','.DS_Store','footer.html','head.html','test.php','navbar.php','index.html'));
                 foreach($files as $file) {
                     if(is_file($directory.$file)) {
-                        echo '<li><a href="'.$directory.$file.'">'.str_ireplace('_', ' ',pathinfo($file,PATHINFO_FILENAME)).'</a></li>';
+                        echo '<li><a class="nav-item" data-active-color="green" data-target="About" href="'.$directory.$file.'">'.str_ireplace('_', ' ',pathinfo($file,PATHINFO_FILENAME)).'</a></li>';
                     }
                 }
             }
         ?>
+        <span class="nav-indicator"></span>
     </ul>
     <div class="burger">
         <div class="ligne1"></div>
