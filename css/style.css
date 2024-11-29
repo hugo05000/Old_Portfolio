@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
 :root {
-  --main-color: #007525;
-  --second-color: #DAFFBA;
-  --third-color: #244D00;
+  --main-color: whitesmoke;
+  --second-color: #55a320;
+  --third-color: #1b1a1a;
 }
 
 *{
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
@@ -78,9 +78,25 @@ header .enTeteVeille{
   position: absolute;
   z-index: -1;
 }
+.wrapper .content {
+  opacity: 0;
+  animation: slideDown 1.3s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 #nav-placeholder {
   position: fixed;
+  z-index: 1000;
 }
 
 .enTeteIndex .content, .enTeteStage .content, .enTeteContact .content, .enTeteBao .content, .enTeteVeille .content{
@@ -93,7 +109,7 @@ header .enTeteVeille{
 .enTeteProfil .content{
   display: table-cell;
   text-align: center;
-  padding-top: 60px;
+  padding-top: 120px;
   text-shadow: 1px 1px 10px black;
 }
 
@@ -105,10 +121,6 @@ header h1{
   font-size: 23px;
 }
 
-.portrait{
-  width: 20%;
-  margin: 0 auto;
-}
 
 /** Navbar **/
 
@@ -121,6 +133,8 @@ nav{
   width: 95vw;
   border-radius: 15px;
   margin-top: 20px;
+  box-shadow: 0 0 20px 0;
+  z-index: 99;
 }
 
 .logo{
@@ -132,21 +146,30 @@ nav{
 
 .logo a{
   text-decoration: none;
-  color: white;
+  color: var(--third-color);
 }
 
 .nav-links{
   display: flex;
-  justify-content: space-around;
+  flex-direction: row-reverse;
   width: 45%;
+  line-height:55px;
 }
 
 .nav-links li{
   list-style: none;
+  min-width: 130px;
+  text-align: center;
+}
+
+.nav-links li:hover {
+  background: var(--second-color);
+  transition: background 0.3s ease;
+  text-decoration-color: var(--main-color);
 }
 
 .nav-links a{
-  color: white;
+  color: var(--third-color);
   text-decoration: none;
   letter-spacing: 3px;
   font-weight: bold;
@@ -162,7 +185,7 @@ nav{
   width: 25px;
   height: 3px;
   margin: 5px;
-  background-color: white;
+  background-color: var(--third-color);
   transition: all 0.3s ease;
 }
 
@@ -179,10 +202,11 @@ nav{
   .nav-links{
     z-index: 1;
     position: absolute;
+    justify-content: space-around;
     right: 0;
     height: 100vh;
     top: 7vh;
-    background-color: #5D4954;
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -228,100 +252,67 @@ nav{
 /** Index **/
 
 .presentation{
-  text-align: center;
+  padding-top: 40px;
   justify-content: center;
   background-color: black;
   color: white;
   display: flex;
 }
 
+.presentation h2 {
+  text-align: center;
+}
+
 .presentation a{
   color: white;
+}
+
+.presentation p {
+  text-align: justify;
+  margin: 20px 100px 10px;
+}
+
+.portrait {
+  display: block;
+  width: 30%;
+  margin: 100px auto 0;
 }
 
 .contenuPresentation{
   margin-top: 10px;
 }
 
-.presentationBTS{
-  margin-top: 10px;
-  text-align: center;
+
+.box {
+  opacity: 0;
+  transform: translateX(50px); /* Par défaut, animation horizontale */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition-delay: 0.3s;
 }
 
-.presentationBTSintroduction{
-  margin-left: 5%;
-  margin-right: 5%;
+.box.visible {
+  opacity: 1;
+  transform: translateX(0); /* Fin de l'animation horizontale */
 }
 
-.presentationBTSintroduction p{
-  text-align: justify;
+.box.vertical {
+  transform: translateY(50px); /* Animation verticale */
 }
 
-.optionsbts{
-  display: flex;
-  margin: auto;
-  text-align: center;
-}
-
-.slam{
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  border-radius: 10px 100px / 120px;
-  animation: gradient 15s ease infinite;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  width: 40%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.sisr{
-  background: linear-gradient(-45deg, #23d5ab, #23a6d5, #e73c7e, #ee7752);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  border-radius: 100px 10px / 120px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  width: 40%;
-  margin-left: auto;
-  margin-right: auto;
+.box.vertical.visible {
+  transform: translateY(0); /* Fin de l'animation verticale */
 }
 
 @keyframes gradient {
 	0% {
-		background-position: 0% 50%;
+		background-position: 0 50%;
 	}
 	50% {
 		background-position: 100% 50%;
 	}
 	100% {
-		background-position: 0% 50%;
+		background-position: 0 50%;
 	}
-}
-
-.textSlamSisr{
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 5%;
-  margin-bottom: 5%;
-}
-
-.textSlamSisr p{
-  text-align: justify;
-}
-
-@media screen and (max-width:768px){
-  .optionsbts{
-    flex-direction: column;
-  }
-
-  .optionsbts article {
-    width: 90%;
-  }
-
-  .slam{
-    margin-bottom: 0;
-  }
 }
 
 /** Pied de page **/
@@ -751,7 +742,7 @@ textarea{
 }
 
 .modal-container-cv {
-  z-index: 1;
+  z-index: 100000;
 }
 
 .modal-container-agra.active, .modal-container-ma.active, .modal-container-cv.active {
@@ -855,39 +846,43 @@ textarea{
   display: flex;
 }
 
-.presentationProfil .presentationGaucheProfil, .presentationProfil .presentationDroiteProfil {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  border-radius: 5px;
+.presentationCarte, .presentationQuiSuisJe .contenu {
+  border-radius: 2px;
   box-shadow: 0 4px 15px 0 black;
 }
 
-.presentationGaucheProfil{
+.presentationCarte, .presentationQuiSuisJe {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.presentationCarte{
   width: 30%;
   margin-left: 5%;
 }
 
-.presentationDroiteProfil div{
-  margin: 10px;
-  color: white;
-}
-
-.presentationDroiteProfil p{
-  margin-top: 10px;
+.presentationQuiSuisJe p{
+  padding-bottom: 8px;
   text-align: justify;
 }
 
-.presentationGaucheProfil iframe {
+.presentationCarte iframe {
   width: 100%;
   max-height: 400px;
   height: 100%;
-  border-radius: 5px;
 }
 
-.presentationDroiteProfil {
+.presentationQuiSuisJe {
   width: 55%;
-  background-color: var(--main-color);
   margin-left: 5%;
+}
+
+.presentationQuiSuisJe .contenu {
+  padding: 20px;
+}
+
+.presentationQuiSuisJe h2 {
+  justify-content: end;
 }
 
 .detailProfil{
@@ -900,32 +895,32 @@ textarea{
 }
 
 .detailProfil h2 {
-  color: var(--main-color);
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-.experienceProfil h2{
-  text-align: center;
+.detailProfil > div {
+  margin-bottom: 50px;
 }
 
 .contenuExperienceProfil {
   background-color: white;
   box-shadow: 0 1px 15px 0 black;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 2px;
   margin-left: 5%;
   margin-right: 5%;
 }
 
-.detailExperienceProfil h3 {
-  color: var(--main-color);
-}
-
-.detailExperienceProfil {
+.contenuExperienceProfil > div {
   display: flex;
   align-items: center;
-  size : 200px;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.contenuExperienceProfil h3 {
+  color: var(--second-color);
 }
 
 .iconExperienceProfil{
@@ -947,147 +942,142 @@ textarea{
 }
 
 .projetproProfil{
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.projetproProfil h2{
-  text-align: center;
-  margin-bottom: 5px;
+  margin: 20px 5%;
 }
 
 .contenuProjetproProfil {
   background-color: white;
   box-shadow: 0 1px 15px 0 black;
   padding: 15px;
-  border-radius: 10px;
-}
-
-.skill{
-  width: 160px;
-  height: 160px;
-  position: relative;
-}
-
-.outer{
-height: 160px;
-width: 160px;
-border-radius: 50%;
-padding:20px;
-box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
-            -6px -6px 10px -1px rgba(255,255,255,0.7);
-}
-
-.inner{
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
-              inset -4px -4px 6px -1px rgba(255,255,255,0.7),
-              -0.5px -0.5px 0px rgba(255,255,255,1),
-              0.5px 0.5px 0px rgba(0,0,0,0.15),
-              0px 12px 10px -10px rgba(0,0,0,0.05);
-}
-
-#number1, #number2{
-  font-weight: 600px;
-  color: #555;
-}
-
-circle{
-  fill:none;
-  stroke: url(#GradientColor);
-  stroke-width: 20px;
-  stroke-dasharray: 472;
-  stroke-dashoffset: 472;
-}
-
-.circle1{
-  animation: anim1 2s linear forwards;
-}
-
-.circle2{
-  animation: anim2 2s linear forwards;
-}
-
-.circle3{
-  animation: anim3 2s linear forwards;
-}
-
-.circle4{
-  animation: anim4 2s linear forwards;
-}
-
-svg{
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-@keyframes anim1{
-  100%{
-    stroke-dashoffset: 100;
-  }
-}
-
-@keyframes anim2{
-  100%{
-    stroke-dashoffset: 180;
-  }
-}
-
-@keyframes anim3{
-  100%{
-    stroke-dashoffset: 130;
-  }
-}
-
-@keyframes anim4{
-  100%{
-    stroke-dashoffset: 180;
-  }
+  border-radius: 2px;
 }
 
 .competencesProfil{
+  display: flex;
+  flex-direction: column;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.competencesProfil h2{
-  text-align: center;
-  margin-bottom: 5px;
-}
-
-.contenuCompetencesProfil {
+.illustration {
   display: flex;
-  justify-content: space-between;
-  margin-left: 10%;
-  margin-right: 10%;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.boxCompetence{
+.illustration > div {
+  display: flex;
+  align-items: flex-start;
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.illustration > div > div > div {
+  width: 85%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.illustration > div:nth-child(even) > div > div {
+  width: 100%;
+
+}
+
+.illustration p {
+  margin-top: 15px;
+}
+
+  /* Utilisation de :nth-child pour alterner les alignements */
+.illustration > div:nth-child(odd) {
+  align-items: flex-start;
+  width: 90%;
+  background-color: var(--main-color);
+  clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+}
+
+.illustration > div:nth-child(even) {
+  align-items: flex-end;
+  width: 90%; /* Largeur des div pairs */
+  margin-left: auto; /* Décalage à droite */
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+  background-color: var(--main-color);
+}
+.illustration > div:nth-child(even) > div {
+  margin-right: auto;
+}
+
+.illustration > div:nth-child(even) > div:nth-child(1) {
+  order: 2; /* Positionne le premier enfant en deuxième */
+}
+
+.illustration > div:nth-child(even) > div:nth-child(2) {
+  order: 1; /* Positionne le deuxième enfant en premier */
+}
+
+.illustration > div:nth-child(even) ul {
+  text-align: end;
+}
+
+.illustration ul {
+  list-style-type: none;
+  font-weight: bold;
+}
+
+.illustration .icon {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  align-items: center;
+  justify-content: center;
+  max-width: 150px;
 }
 
-.boxCompetence h3{
-  margin-top: 10px;
+.illustration > div:nth-child(even) p {
+  text-align: end;
 }
 
-.competencesProfil .description {
-  margin-top: 10px;
-  margin-bottom: 50px;
-  margin-left: 15%;
-  margin-right: 15%;
-  background-color: white;
-  box-shadow: 0 1px 15px 0 black;
-  padding: 15px;
-  border-radius: 10px;
+@media screen and (max-width:1024px) {
+  .illustration > div {
+    flex-direction: column;
+  }
+
+  .illustration > div:nth-child(even) > div:nth-child(1) {
+    order: 1; /* Positionne le premier enfant en deuxième */
+  }
+
+  .illustration > div:nth-child(even) > div:nth-child(2) {
+    order: 2; /* Positionne le deuxième enfant en premier */
+  }
+
+  .illustration > div:nth-child(even) > div {
+    margin-right: unset;
+  }
+
+  .illustration > div:nth-child(even) > .icon {
+    text-align: right;
+    align-items: end;
+  }
+
+  .illustration > div > div > div {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .illustration > div:nth-child(odd) > .icon {
+    text-align: left;
+    align-items: start;
+  }
 }
+
+.competencesProfil h3{
+  margin-top: 10px;
+  color: var(--second-color);
+}
+
+.competencesProfil img{
+  width: 80px;
+}
+
 .cvProfil {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -1122,6 +1112,19 @@ iframe{
     width: 90%;
   }
 
+  .presentationQuiSuisJe {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .presentationQuiSuisJe div {
+    width: 100%;
+  }
+
+  .presentationQuiSuisJe h2 {
+    text-align: center;
+  }
+
   .detailExperienceProfil{
     flex-direction: column;
   }
@@ -1130,22 +1133,8 @@ iframe{
     text-align: center;
   }
 
-  .detailStage{
-    margin-bottom: 30px;
-  }
-
-  .contenuCompetencesProfil{
-    flex-direction: column;
-    align-items: center;
-  }
-
   .boxCompetence{
     margin-bottom: 30px;
-  }
-
-  .competencesProfil .description{
-    margin-left: 5%;
-    margin-right: 5%;
   }
 }
 
