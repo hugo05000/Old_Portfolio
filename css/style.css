@@ -114,7 +114,6 @@ header h1{
   font-size: 23px;
 }
 
-
 @media screen and (max-width: 1024px) {
   .wrapper{
     padding-left: 50px;
@@ -122,11 +121,11 @@ header h1{
   }
 
   header h1{
-    font-size: 100px;
+    font-size: 40px;
   }
 
   .subtitle{
-    font-size: 30px;
+    font-size: 20px;
   }
 }
 
@@ -291,7 +290,6 @@ nav{
   margin-top: 10px;
 }
 
-
 .box {
   opacity: 0;
   transform: translateX(50px); /* Par défaut, animation horizontale */
@@ -322,6 +320,12 @@ nav{
 	100% {
 		background-position: 0 50%;
 	}
+}
+
+@media screen and (max-width: 1024px) {
+  .presentation p {
+    margin: 20px 50px 10px;
+  }
 }
 
 /** Pied de page **/
