@@ -183,6 +183,11 @@ nav{
   font-size: 14px;
 }
 
+.nav-item {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 .burger{
   display: none;
   cursor: pointer;
@@ -227,6 +232,9 @@ nav{
   }
   .burger{
     display: block;
+  }
+  .nav-item {
+    padding : 0;
   }
 }
 
