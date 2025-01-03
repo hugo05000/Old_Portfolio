@@ -44,7 +44,7 @@
                         <p>Entrez simplement votre adresse mail ainsi que votre message et je prendrais contact avec vous le plus rapidement possible...</p>
                     </div>
                     <div class="zoneEnvoie">
-                        <form action="contact.php" method="post">
+                        <form action="contact.php" id="myForm" method="post">
                             <div class="nomPrenom">
                                 <div class="name">
                                     <input placeholder="Votre nom" type="text" id="nom" name="nom" required>
@@ -61,7 +61,7 @@
                             </div>
                             <div>
                                 <div class="btn-conteiner">
-                                    <a class="btn-content" href="#">
+                                    <a class="btn-content" id="submitButton">
                                         <span class="btn-title">Envoyer</span>
                                         <span class="icon-arrow">
                                       <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
