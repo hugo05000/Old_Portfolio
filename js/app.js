@@ -55,12 +55,6 @@ document.querySelectorAll('.box').forEach((box) => {
     }
 });
 
-//Envoie formualire
-document.getElementById('submitButton').addEventListener('click', function (event) {
-    event.preventDefault();
-    document.getElementById('myForm').submit();
-});
-
 //Modals
 
 const modalContainerAgra = document.querySelector(".modal-container-agra");

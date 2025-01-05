@@ -7,7 +7,7 @@
         $directory = './';
             if(is_dir($directory)) {
                 $files = scandir($directory);
-                $files = array_diff($files, array('.', '..','README.md','.DS_Store','footer.html','test.php','navbar.php','index.html'));
+                $files = array_diff($files, array('.', '..','.gitignore','.htaccess','README.md','.DS_Store','footer.html','test.php','navbar.php','index.html'));
                 foreach($files as $file) {
                     if(is_file($directory.$file)) {
                         echo '<a class="nav-item" data-active-color="green" data-target="About" href="' . $directory . pathinfo($file, PATHINFO_FILENAME) . '">' . str_ireplace('_', ' ', pathinfo($file, PATHINFO_FILENAME)) . '</a>';

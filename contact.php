@@ -61,7 +61,7 @@
                             </div>
                             <div>
                                 <div class="btn-conteiner">
-                                    <a class="btn-content" id="submitButton">
+                                    <button type="submit" class="btn-content" id="submitButton">
                                         <span class="btn-title">Envoyer</span>
                                         <span class="icon-arrow">
                                       <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -72,7 +72,7 @@
                                         </g>
                                       </svg>
                                     </span>
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </form>
