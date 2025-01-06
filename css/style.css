@@ -164,9 +164,13 @@ nav{
 }
 
 .nav-links li{
+  display: flex;
   list-style: none;
   min-width: 130px;
   text-align: center;
+  height: 7vh;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-links li:hover {
