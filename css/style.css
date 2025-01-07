@@ -222,7 +222,7 @@ nav{
     justify-content: space-around;
     right: 0;
     height: 100vh;
-    top: 7vh;
+    top: 10vh;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -234,6 +234,10 @@ nav{
   .nav-links li{
     opacity: 0;
   }
+  .nav-links a {
+    font-size: 19px;
+  }
+
   .burger{
     display: block;
   }
@@ -378,7 +382,7 @@ footer img{
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 15px;
   color: var(--main-color);
   background: var(--color-background);
   transition: 1s;
@@ -1096,5 +1100,9 @@ iframe{
 
   .boxCompetence{
     margin-bottom: 30px;
+  }
+
+  .contenuCV {
+    flex-direction: column;
   }
 }
