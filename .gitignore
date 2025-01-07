@@ -7,3 +7,6 @@
 # Fichiers système
 .DS_Store
 .idea
+
+#Autres fichier
+test.php
