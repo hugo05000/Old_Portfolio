@@ -24,9 +24,8 @@ const navSlide = () => {
 }
 
 $(document).ready(function() {
-    $("#nav-placeholder").load("navbar.html", function() {
-        // Cette fonction sera exécutée après que la barre de navigation soit chargée
-        navSlide();
+    $("#nav-placeholder").load("navbar.php", function() {
+            navSlide();
     });
 });
 
