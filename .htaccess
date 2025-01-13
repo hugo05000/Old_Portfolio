@@ -1,6 +1,9 @@
 # Activer le moteur de réécriture
 RewriteEngine On
 
+# Renommage de la barre de navigation
+RewriteRule ^navbar$ navbar.php [L]
+
 # Supprimer l'extension .php ou .html
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.*)$ $1.php [L]

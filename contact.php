@@ -39,7 +39,7 @@
             <div class="envoieMessage">
                 <div class="envoieMessageContenu">
                     <div class="textEnvoieMessage">
-                        <h4>Message rapide</h4>
+                        <h2>Message rapide</h2>
                         <p>Contactez moi rapidement grâce à ce module.</p>
                         <p>Entrez simplement votre adresse mail ainsi que votre message et je prendrais contact avec vous le plus rapidement possible...</p>
                     </div>

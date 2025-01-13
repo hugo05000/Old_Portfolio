@@ -32,16 +32,23 @@ header {
   }
 }
 
+h2 {
+  text-align: center;
+  font-size: 30px;
+}
+
+.custom-line {
+  border:none;
+  background-color: black;
+  height: 2px;
+  width: 40%;
+  margin: 5px auto;
+}
+
 /** Image de fond **/
 
 header .enTeteIndex{
   background: url(../Images/montagne.jpeg) no-repeat center center;
-  background-size: cover;
-  color: white;
-}
-
-header .enTeteStage{
-  background: url(../Images/programmation.jpg) no-repeat center center;
   background-size: cover;
   color: white;
 }
@@ -52,20 +59,14 @@ header .enTeteContact{
   color: white;
 }
 
-header .enTeteBao{
-  background: url(../Images/datacenter.jpg) no-repeat center center;
-  background-size: cover;
-  color: white;
-}
-
 header .enTeteProfil{
   background: url(../Images/profil.jpg) no-repeat center center;
   background-size: cover;
   color: white;
 }
 
-header .enTeteVeille{
-  background: url(../Images/cybersecurite.jpg) no-repeat center center;
+header .enTeteExperiences{
+  background: url(../Images/programmation.jpg) no-repeat center center;
   background-size: cover;
   color: white;
 }
@@ -77,10 +78,6 @@ header .enTeteVeille{
   font-family: 'Poppins', sans-serif;
   position: absolute;
   z-index: -1;
-}
-.wrapper .content {
-  opacity: 0;
-  animation: slideDown 1.3s ease-out forwards;
 }
 
 @keyframes slideDown {
@@ -99,11 +96,13 @@ header .enTeteVeille{
   z-index: 1000;
 }
 
-.enTeteIndex .content, .enTeteProfil .content, .enTeteStage .content, .enTeteContact .content, .enTeteBao .content, .enTeteVeille .content{
+.content{
   display: table-cell;
   text-align: center;
   vertical-align: middle;
   text-shadow: 1px 1px 10px black;
+  opacity: 0;
+  animation: slideDown 1.3s ease-out forwards;
 }
 
 header h1{
@@ -353,8 +352,8 @@ footer{
 }
 
 footer hr{
-  margin-left: 10%;
-  margin-right: 10%;
+  width: 80%;
+  margin: auto;
 }
 
 footer img{
@@ -366,7 +365,7 @@ footer img{
 
 /** Boutons **/
 
-.btn-conteiner {
+.btn-container{
   display: flex;
   justify-content: center;
   --color-background: var(--second-color);
@@ -388,6 +387,7 @@ footer img{
   transition: 1s;
   border-radius: 100px;
   box-shadow: 0 0 0.2em 0 var(--color-background);
+  height: 50px;
 }
 
 .btn-content:hover, .btn-content:focus {
@@ -401,7 +401,7 @@ footer img{
 
 .btn-content .icon-arrow {
   transition: 0.5s;
-  margin-right: 0px;
+  margin-right: 0;
   transform: scale(0.6);
 }
 
@@ -469,73 +469,6 @@ footer img{
   }
 }
 
-/** Stage **/
-
-.AGRA{
-  display: flex;
-  width: 100%;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 1px 15px 0 black;
-}
-
-.meilleurArtisan{
-  display: flex;
-  margin-top: 5%;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 1px 15px 0 black;
-}
-
-.imageStage {
-  display: flex;
-  align-self: center;
-  width:30%;
-}
-
-.imageStage img {
-  padding: 10px;
-  width: 100%;
-}
-
-.corpsStage{
-  background-color: white;
-  color: black;
-  display: flex;
-}
-
-.corpsStage p{
-  text-align: justify;
-}
-
-.corpsStageContenu{
-  width: 100%;
-  margin: 5%;
-}
-
-.textEtBoutonStage{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.boutonStage{
-  margin-left: auto;
-  margin-top: auto;
-}
-
-.AGRA h4{
-  letter-spacing: 2px;
-  font-weight: bolder;
-  font-size: 30px;
-}
-
-.meilleurArtisan h4{
-  letter-spacing: 2px;
-  font-weight: bolder;
-  font-size: 30px;
-}
-
 @media screen and (max-width:768px){
   .imageStage{
     display: none;
@@ -547,6 +480,61 @@ footer img{
 
   .boutonStage{
     margin-right: auto;
+  }
+}
+
+/* Expériences */
+
+.containerExperiences {
+  margin-top: 40px;
+}
+
+.containerExperiences div {
+  display: flex;
+  flex-wrap: wrap; /* Permet de passer sur plusieurs lignes si nécessaire */
+  justify-content: space-between; /* Espace égal entre les éléments */
+  margin: 15px;
+}
+
+.containerExperiences > div > div:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.containerExperiences img {
+  width: 150px;
+}
+
+.blocExperiences {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0 1px 15px 0 black;
+  padding: 15px;
+  border-radius: 2px;
+  flex: 0 1 calc(50% - 30px); /* Prend 50% de la largeur moins l'espace du gap */
+}
+
+.btn-container {
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  .containerExperiences div {
+    flex-direction: column; /* Les éléments s'alignent en colonne */
+    gap: 15px;
+  }
+
+  .containerExperiences > div > div {
+    flex: 1 1 100%; /* Chaque élément occupe 100% de la largeur */
+  }
+
+  .containerExperiences > div > div:hover {
+    transform: none;
+    transition: none;
   }
 }
 
@@ -613,7 +601,7 @@ footer img{
   align-items: center;
 }
 
-.textEnvoieMessage h4{
+.textEnvoieMessage h2{
   letter-spacing: 2px;
   font-weight: bolder;
   font-size: 30px;
@@ -697,20 +685,17 @@ textarea{
 
 /* Modal */
 
-.modal-container-agra, .modal-container-ma, .modal-container-cv{
+.modal-container-ta, .modal-container-agra, .modal-container-camping, .modal-container-presse, .modal-container-camping, .modal-container-on, .modal-container-mairie, .modal-container-ma-alternance, .modal-container-ma-stage, .modal-container-cv{
   visibility: hidden;
   position: fixed;
   top: 0;
   width: 100vw;
   height: 100vh;
   transition: visibility 0.4s;
-}
-
-.modal-container-cv {
   z-index: 100000;
 }
 
-.modal-container-agra.active, .modal-container-ma.active, .modal-container-cv.active {
+.modal-container-ta.active, .modal-container-agra.active, .modal-container-camping.active, .modal-container-presse.active, .modal-container-camping.active, .modal-container-on.active, .modal-container-mairie.active, .modal-container-ma-alternance.active, .modal-container-ma-stage.active, .modal-container-cv.active {
   visibility: visible;
 }
 
@@ -723,7 +708,7 @@ textarea{
   transition: opacity 0.4s 0.2s ease-out;
 }
 
-.modal-container-agra.active .overlay, .modal-container-ma.active .overlay, .modal-container-cv.active .overlay {
+.modal-container-ta.active .overlay, .modal-container-agra.active .overlay, .modal-container-camping.active .overlay, .modal-container-presse.active .overlay, .modal-container-camping.active .overlay, .modal-container-on.active .overlay, .modal-container-mairie.active .overlay, .modal-container-ma-alternance.active .overlay, .modal-container-ma-stage.active .overlay, .modal-container-cv.active .overlay{
   opacity: 1;
   transition: opacity 0.4s ease-out;
 }
@@ -759,7 +744,7 @@ textarea{
   top: 50%;
 }
 
-.modal-container-agra.active .modal, .modal-container-ma.active .modal, .modal-container-cv.active .modal{
+.modal-container-ta.active .modal, .modal-container-agra.active .modal, .modal-container-camping.active .modal, .modal-container-presse.active .modal, .modal-container-camping.active .modal, .modal-container-on.active .modal, .modal-container-mairie.active .modal, .modal-container-ma-alternance.active .modal, .modal-container-ma-stage.active .modal, .modal-container-cv.active .modal {
   opacity: 1;
   transform: translate(-50%, -50%);
   transition: opacity 0.4s 0.2s ease-out,
@@ -785,10 +770,6 @@ textarea{
   margin-right: auto;
 }
 
-.modal-container-ma img {
-  margin-bottom: 20px;
-}
-
 .modal p {
   line-height: 1.4;
   margin-bottom: 5px;
@@ -801,7 +782,10 @@ textarea{
   justify-content: center;
   color: #ee7752;
   font-size: 25px;
+}
 
+.modal img {
+  width: 200px;
 }
 
 /* Profil */

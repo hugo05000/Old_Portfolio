@@ -24,7 +24,7 @@ const navSlide = () => {
 }
 
 $(document).ready(function() {
-    $("#nav-placeholder").load("navbar.php", function() {
+    $("#nav-placeholder").load("navbar", function() {
             navSlide();
     });
 });
@@ -56,27 +56,39 @@ document.querySelectorAll('.box').forEach((box) => {
 
 //Modals
 
-const modalContainerAgra = document.querySelector(".modal-container-agra");
-const modalContainerMa = document.querySelector(".modal-container-ma");
-const modalContainerCv = document.querySelector(".modal-container-cv");
+const modalContainers = {
+    agra: document.querySelector(".modal-container-agra"),
+    maStage: document.querySelector(".modal-container-ma-stage"),
+    maAlternance: document.querySelector(".modal-container-ma-alternance"),
+    ta: document.querySelector(".modal-container-ta"),
+    mairie: document.querySelector(".modal-container-mairie"),
+    camping: document.querySelector(".modal-container-camping"),
+    on: document.querySelector(".modal-container-on"),
+    presse: document.querySelector(".modal-container-presse"),
+    cv: document.querySelector(".modal-container-cv")
+};
 
-const modalTriggersAgra = document.querySelectorAll(".modal-trigger-agra");
-const modalTriggersMa = document.querySelectorAll(".modal-trigger-ma");
-const modalTriggersCv = document.querySelectorAll(".modal-trigger-cv");
+const modalTriggers = {
+    agra: document.querySelectorAll(".modal-trigger-agra"),
+    maStage: document.querySelectorAll(".modal-trigger-ma-stage"),
+    maAlternance: document.querySelectorAll(".modal-trigger-ma-alternance"),
+    ta: document.querySelectorAll(".modal-trigger-ta"),
+    mairie: document.querySelectorAll(".modal-trigger-mairie"),
+    camping: document.querySelectorAll(".modal-trigger-camping"),
+    on: document.querySelectorAll(".modal-trigger-on"),
+    presse: document.querySelectorAll(".modal-trigger-presse"),
+    cv: document.querySelectorAll(".modal-trigger-cv")
+};
 
-modalTriggersAgra.forEach(trigger => trigger.addEventListener("click", toggleModalAgra))
-modalTriggersMa.forEach(trigger => trigger.addEventListener("click", toggleModalMa))
-modalTriggersCv.forEach(trigger => trigger.addEventListener("click", toggleModalCv))
-
-
-function toggleModalAgra(){
-  modalContainerAgra.classList.toggle("active")
+// Fonction pour basculer les modales
+function toggleModal(modalName) {
+    console.log(modalName);
+    modalContainers[modalName].classList.toggle("active");
 }
 
-function toggleModalMa(){
-    modalContainerMa.classList.toggle("active")
-}
-
-function toggleModalCv(){
-    modalContainerCv.classList.toggle("active")
-}
+// Ajout des Event Listeners de manière dynamique
+Object.keys(modalTriggers).forEach(modalName => {
+    modalTriggers[modalName].forEach(trigger => {
+        trigger.addEventListener("click", () => toggleModal(modalName));
+    });
+});
