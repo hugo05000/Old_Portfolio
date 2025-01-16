@@ -493,7 +493,7 @@ footer img{
   display: flex;
   flex-wrap: wrap; /* Permet de passer sur plusieurs lignes si nécessaire */
   justify-content: space-between; /* Espace égal entre les éléments */
-  margin: 15px;
+  margin: 15px 30px;
 }
 
 .containerExperiences > div > div:hover {
@@ -515,7 +515,7 @@ footer img{
   box-shadow: 0 1px 15px 0 black;
   padding: 15px;
   border-radius: 2px;
-  flex: 0 1 calc(50% - 30px); /* Prend 50% de la largeur moins l'espace du gap */
+  flex: 0 1 calc(50% - 60px); /* Prend 50% de la largeur moins l'espace du gap */
 }
 
 .btn-container {
@@ -525,6 +525,8 @@ footer img{
 @media screen and (max-width: 1024px) {
   .containerExperiences div {
     flex-direction: column; /* Les éléments s'alignent en colonne */
+    margin-right: 15px;
+    margin-left: 15px;
     gap: 15px;
   }
 
@@ -729,8 +731,15 @@ textarea{
   transform 0.4s ease-out;
 }
 
-.modal p{
+.modal p, .modal li{
   text-align: justify;
+}
+
+.modal h3 {
+  color: var(--second-color);
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 5px;
 }
 
 @media screen and (max-width:768px){
@@ -780,7 +789,7 @@ textarea{
   text-decoration: none;
   display: flex;
   justify-content: center;
-  color: #ee7752;
+  color: var(--second-color);
   font-size: 25px;
 }
 
@@ -906,6 +915,10 @@ textarea{
   flex-direction: column;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.competencesProfil .liste {
+  font-weight: bold;
 }
 
 .illustration {

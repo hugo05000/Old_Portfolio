@@ -26,6 +26,7 @@
                     <div class="blocExperiences">
                         <img src="Images/technicatome.png" alt="TechnicAtome">
                         <h3>TechnicAtome - Pilote opérationnel</h3>
+                        <h4>Septembre 2023 - Septembre 2025</h4>
                         <p>Gestion de projet et pilotage opérationnel sur le domaine des logiciels de conception assistés par ordinateur (CAO)</p>
                         <div class="btn-container">
                             <button class="btn-content modal-trigger-ta">
@@ -45,6 +46,7 @@
                     <div class="blocExperiences">
                         <img src="Images/meilleurartisan.png" alt="MeilleurArtisan.com">
                         <h3>MeilleurArtisan.com - Développeur WEB</h3>
+                        <h4>Septembre 2022 - JuilLet 2023</h4>
                         <p>Développement WEB full-stack avec le framework Eloquent ORM de Laravel.</p>
                         <p>Développement des outils internes et du site de l'entreprise.</p>
                         <div class="btn-container">
@@ -71,6 +73,7 @@
                     <div class="blocExperiences">
                         <img src="Images/meilleurartisan.png" alt="MeilleurArtisan.com">
                         <h3>MeilleurArtisan.com - Développeur WEB</h3>
+                        <h4>Janvier 2022 - Février 2022</h4>
                         <p>Développement d’un système de pointage des horaires des employés en PHP (avec l’ORM Eloquent de Laravel) afin de faciliter et centraliser la notation des horaires des employés dans l’objectif d’alléger la gestion administrative de celles-ci.Développement d’un système de pointage des horaires des employés en PHP (avec l’ORM Eloquent de Laravel) afin de faciliter et centraliser la notation des horaires des employés dans l’objectif d’alléger la gestion administrative de celles-ci.</p>
                         <div class="btn-container">
                             <button class="btn-content modal-trigger-ma-stage">
@@ -90,6 +93,7 @@
                     <div class="blocExperiences">
                         <img src="Images/AGRA.png" alt="Agra">
                         <h3>Agra </h3>
+                        <h4>Mai 2021 - Juillet 2021</h4>
                         <p>Développement d’un site WEB de vente de pièces automobiles pour la plateforme Drop Sud.</p>
                         <p>Développement d’un logiciel permettant la gestion du site par le service marketing. Utilisation de WinDev et WebDev.</p>
                         <div class="btn-container">
@@ -116,6 +120,7 @@
                     <div class="blocExperiences">
                         <img src="Images/mairie-chorges.png" alt="Mairie de Chorges">
                         <h3>Mairie de Chorges - Employé Polyvalent</h3>
+                        <h4>Juillet 2022 - Août 2022</h4>
                         <p>Développement WEB d'un formulaire avec backoffice</p>
                         <p>Péage du parking de la baie de Chanteloube</p>
                         <p>Nettoyage des sanitaires</p>
@@ -137,10 +142,11 @@
                     <div class="blocExperiences">
                         <img src="Images/onet.png" alt="ONet">
                         <h3>ONet - Agent d'entretien</h3>
+                        <h4>Juillet 2021 - Août 2021</h4>
                         <p>Nettoyage de chambres d’hôtel dans le centre de loisirs BTP Vacances à Chorges. Travail par équipe de 2, 3 ou 4.</p>
                         <p>Chauffeur pour récupérer les équipes et les amener sur le site de travail.</p>
                         <div class="btn-container">
-                            <button class="btn-content modal-trigger-onet">
+                            <button class="btn-content modal-trigger-on">
                                 <span class="btn-title">Consulter</span>
                                 <span class="icon-arrow">
                               <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -157,6 +163,7 @@
                     <div class="blocExperiences">
                         <img src="Images/camping_parc_des_serigons.png" alt="camping le par des Sérigons">
                         <h3>Camping le parc des Sérigons - Agent polyvalent</h3>
+                        <h4>Juillet 2020 - Août 2020</h4>
                         <p>Entretien des douches, des sanitaires et du restaurant du camping.</p>
                         <p>Aide en cuisine : réalisation de tâches simples : Préparation de plateau, plonge.</p>
                         <div class="btn-container">
@@ -176,6 +183,7 @@
                     </div>
                     <div class="blocExperiences">
                         <h3>Société de gestion du portage - Vendeur colporteur de presse</h3>
+                        <h4>Juillet 2019 - Août 2019</h4>
                         <p>Livraison du quotidien “Le Dauphiné Libéré” à domicile à l’aide d’un véhicule. Travail de nuit.</p>
                         <div class="btn-container">
                             <button class="btn-content modal-trigger-presse">

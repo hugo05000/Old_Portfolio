@@ -60,7 +60,7 @@
                                 <textarea placeholder="Votre message" id="message" name="message" required></textarea>
                             </div>
                             <div>
-                                <div class="btn-conteiner">
+                                <div class="btn-container">
                                     <button type="submit" class="btn-content" id="submitButton">
                                         <span class="btn-title">Envoyer</span>
                                         <span class="icon-arrow">

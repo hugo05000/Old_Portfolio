@@ -92,3 +92,20 @@ Object.keys(modalTriggers).forEach(modalName => {
         trigger.addEventListener("click", () => toggleModal(modalName));
     });
 });
+
+// Calcul de l'age (index))
+function calculerAge(dateNaissance) {
+    let naissance = new Date(dateNaissance);
+    let aujourdHui = new Date();
+    let age = aujourdHui.getFullYear() - naissance.getFullYear();
+    let mois = aujourdHui.getMonth() - naissance.getMonth();
+    if (mois < 0 || (mois === 0 && aujourdHui.getDate() < naissance.getDate())) {
+        age--;
+    }
+    return age;
+}
+
+let dateDeNaissance = "2001-01-15"; // YYYY-MM-DD
+let age = calculerAge(dateDeNaissance);
+
+document.getElementById("age").textContent = age;
