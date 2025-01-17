@@ -84,7 +84,6 @@ const modalTriggers = {
 
 // Fonction pour basculer les modales
 function toggleModal(modalName) {
-    console.log(modalName);
     modalContainers[modalName].classList.toggle("active");
 }
 
@@ -110,7 +109,9 @@ function calculerAge(dateNaissance) {
 let dateDeNaissance = "2001-01-15"; // YYYY-MM-DD
 let age = calculerAge(dateDeNaissance);
 
-//document.getElementById("age").textContent = age;
+if (document.getElementById("age")) {
+    document.getElementById("age").textContent = age; // Affiche l'âge uniquement si l'élément existe
+}
 
 // Envoie mail
 $(document).ready(function () {
@@ -122,7 +123,7 @@ $(document).ready(function () {
 
         // Envoi des données via AJAX
         $.ajax({
-            url: "EnvoieMail.php",
+            url: "sendMail.php",
             type: "POST",
             data: formData,
             dataType: "json",
@@ -134,7 +135,6 @@ $(document).ready(function () {
                 }
             },
             error: function (xhr, status, error) {
-                console.error("Erreur AJAX :", status, error);
                 alert("Une erreur est survenue lors de l'envoi du message.");
             }
         });

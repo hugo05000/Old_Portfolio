@@ -1,6 +1,9 @@
 <?php
 
-class EnvoieMail
+/**
+ * @author Hugo MARCEAU
+ */
+class Mail
 {
     private string $header;
     private $to;
@@ -28,40 +31,16 @@ class EnvoieMail
                         "\n" . 'Content-Transfer-Encoding: 8bit';
     }
 
-    public function send() {
+    /**
+     * Permet d'envoyer un mail.
+     * @return string[] Tableau retourné pour la requête AJAX
+     */
+    public function send(): array
+    {
         if (mail($this->to, $this->nom, $this->message, $this->header)) {
             return ['status' => 'success', 'message' => 'Merci !Votre message a bien été envoyé.'];
         } else {
             return ['status' => 'error', 'message' => 'Désolé. Une erreur est survenue...'];
         }
     }
-
-    public static function handleAjaxRequest()
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $nom = $_POST['nom'] ?? '';
-            $message = $_POST['message'] ?? '';
-            $email = $_POST['email'] ?? '';
-
-            if (!empty($nom) && !empty($message) && !empty($email)) {
-                $mail = new self($nom, $message, $email);
-                $response = $mail->send();
-            } else {
-                $response = ['status' => 'error', 'message' => 'Tous les champs sont obligatoires.'];
-            }
-
-            // Renvoyer la réponse JSON
-            header('Content-Type: application/json');
-            echo json_encode($response);
-            exit;
-        }
-
-        // Si ce n'est pas une requête POST
-        header('Content-Type: application/json');
-        echo json_encode(['status' => 'error', 'message' => 'Méthode non autorisée.']);
-        exit;
-    }
 }
-
-// Appeler la méthode pour gérer la requête AJAX
-EnvoieMail::handleAjaxRequest();
