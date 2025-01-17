@@ -18,6 +18,30 @@
                 </div>
             </div>
         </header>
+        <div class="modal-container-mailSuccess">
+            <div class="overlay modal-trigger-mailSuccess"></div>
+            <div class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="dialogDesc">
+                <button aria-label="close modal" class="close-modal modal-trigger-mailSuccess">X</button>
+                <div>
+                    <div>
+                        <h2>Merci !</h2>
+                        <p id="dialogDesc">Votre message a bien été envoyé.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-container-mailError">
+            <div class="overlay modal-trigger-mailError"></div>
+            <div class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="dialogDesc">
+                <button aria-label="close modal" class="close-modal modal-trigger-mailError">X</button>
+                <div>
+                    <div>
+                        <h2>Oups...</h2>
+                        <p id="dialogDesc">Une erreur est survenu, merci de réessayer plus tard.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!--**Corps de la page**-->
         <main>
             <div class="contactRapide">
@@ -44,7 +68,7 @@
                         <p>Entrez simplement votre adresse mail ainsi que votre message et je prendrais contact avec vous le plus rapidement possible...</p>
                     </div>
                     <div class="zoneEnvoie">
-                        <form action="contact.php" id="myForm" method="post">
+                        <form id="myForm">
                             <div class="nomPrenom">
                                 <div class="name">
                                     <input placeholder="Votre nom" type="text" id="nom" name="nom" required>
@@ -61,7 +85,7 @@
                             </div>
                             <div>
                                 <div class="btn-container">
-                                    <button type="submit" class="btn-content" id="submitButton">
+                                    <button class="btn-content" id="sendMail">
                                         <span class="btn-title">Envoyer</span>
                                         <span class="icon-arrow">
                                       <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -76,34 +100,6 @@
                                 </div>
                             </div>
                         </form>
-                        <!--** Envoi du mail **-->
-                        <?php
-                        if (isset($_POST['message'])) {
-                            if (!empty($_POST['nom']) and !empty($_POST['email']) and !empty($_POST['message'])) {
-                                $header .= 'Content-Type:text/html; charset="uft-8"' . "\n";
-                                $header .= 'Content-Transfer-Encoding: 8bit';
-
-                                $message = '
-                                <html>
-                                    <body>
-                                        <div align="center">
-                                            <u>Nom de l\'expéditeur :</u>' . $_POST['nom'] . '<br />
-                                            <u>Mail de l\'expéditeur :</u>' . $_POST['email'] . '<br />
-                                            <br />
-                                            ' . nl2br($_POST['message']) . '
-                                        </div>
-                                    </body>
-                                </html>
-                                ';
-
-                                mail("contact@hugomarceau.fr", "Message - portfolio", wordwrap($message, 70, "\r\n"), $header);
-                                echo $msg = "Votre message a bien été envoyé !";
-                                header("Location: index.html");
-                            } else {
-                                echo $msg = "Tous les champs doivent être complétés !";
-                            }
-                        }
-                        ?>
                     </div>
                 </div>
             </div>

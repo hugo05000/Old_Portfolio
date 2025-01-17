@@ -687,7 +687,7 @@ textarea{
 
 /* Modal */
 
-.modal-container-ta, .modal-container-agra, .modal-container-camping, .modal-container-presse, .modal-container-camping, .modal-container-on, .modal-container-mairie, .modal-container-ma-alternance, .modal-container-ma-stage, .modal-container-cv{
+.modal-container-ta, .modal-container-agra, .modal-container-camping, .modal-container-presse, .modal-container-camping, .modal-container-on, .modal-container-mairie, .modal-container-ma-alternance, .modal-container-ma-stage, .modal-container-cv, .modal-container-mailSuccess, .modal-container-mailError{
   visibility: hidden;
   position: fixed;
   top: 0;
@@ -697,7 +697,7 @@ textarea{
   z-index: 100000;
 }
 
-.modal-container-ta.active, .modal-container-agra.active, .modal-container-camping.active, .modal-container-presse.active, .modal-container-camping.active, .modal-container-on.active, .modal-container-mairie.active, .modal-container-ma-alternance.active, .modal-container-ma-stage.active, .modal-container-cv.active {
+.modal-container-ta.active, .modal-container-agra.active, .modal-container-camping.active, .modal-container-presse.active, .modal-container-camping.active, .modal-container-on.active, .modal-container-mairie.active, .modal-container-ma-alternance.active, .modal-container-ma-stage.active, .modal-container-cv.active, .modal-container-mailSuccess.active, .modal-container-mailError.active {
   visibility: visible;
 }
 
@@ -710,7 +710,7 @@ textarea{
   transition: opacity 0.4s 0.2s ease-out;
 }
 
-.modal-container-ta.active .overlay, .modal-container-agra.active .overlay, .modal-container-camping.active .overlay, .modal-container-presse.active .overlay, .modal-container-camping.active .overlay, .modal-container-on.active .overlay, .modal-container-mairie.active .overlay, .modal-container-ma-alternance.active .overlay, .modal-container-ma-stage.active .overlay, .modal-container-cv.active .overlay{
+.modal-container-ta.active .overlay, .modal-container-agra.active .overlay, .modal-container-camping.active .overlay, .modal-container-presse.active .overlay, .modal-container-camping.active .overlay, .modal-container-on.active .overlay, .modal-container-mairie.active .overlay, .modal-container-ma-alternance.active .overlay, .modal-container-ma-stage.active .overlay, .modal-container-cv.active .overlay, .modal-container-mailSuccess.active .overlay, .modal-container-mailError.active .overlay {
   opacity: 1;
   transition: opacity 0.4s ease-out;
 }
@@ -753,7 +753,7 @@ textarea{
   top: 50%;
 }
 
-.modal-container-ta.active .modal, .modal-container-agra.active .modal, .modal-container-camping.active .modal, .modal-container-presse.active .modal, .modal-container-camping.active .modal, .modal-container-on.active .modal, .modal-container-mairie.active .modal, .modal-container-ma-alternance.active .modal, .modal-container-ma-stage.active .modal, .modal-container-cv.active .modal {
+.modal-container-ta.active .modal, .modal-container-agra.active .modal, .modal-container-camping.active .modal, .modal-container-presse.active .modal, .modal-container-camping.active .modal, .modal-container-on.active .modal, .modal-container-mairie.active .modal, .modal-container-ma-alternance.active .modal, .modal-container-ma-stage.active .modal, .modal-container-cv.active .modal, .modal-container-mailSuccess.active .modal, .modal-container-mailError.active .modal {
   opacity: 1;
   transform: translate(-50%, -50%);
   transition: opacity 0.4s 0.2s ease-out,

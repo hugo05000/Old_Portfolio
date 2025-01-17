@@ -1,5 +1,4 @@
 //Barre de navigation
-
 const navSlide = () => {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
@@ -55,7 +54,6 @@ document.querySelectorAll('.box').forEach((box) => {
 });
 
 //Modals
-
 const modalContainers = {
     agra: document.querySelector(".modal-container-agra"),
     maStage: document.querySelector(".modal-container-ma-stage"),
@@ -65,7 +63,9 @@ const modalContainers = {
     camping: document.querySelector(".modal-container-camping"),
     on: document.querySelector(".modal-container-on"),
     presse: document.querySelector(".modal-container-presse"),
-    cv: document.querySelector(".modal-container-cv")
+    cv: document.querySelector(".modal-container-cv"),
+    mailSuccess: document.querySelector(".modal-container-mailSuccess"),
+    mailError: document.querySelector(".modal-container-mailError")
 };
 
 const modalTriggers = {
@@ -77,7 +77,9 @@ const modalTriggers = {
     camping: document.querySelectorAll(".modal-trigger-camping"),
     on: document.querySelectorAll(".modal-trigger-on"),
     presse: document.querySelectorAll(".modal-trigger-presse"),
-    cv: document.querySelectorAll(".modal-trigger-cv")
+    cv: document.querySelectorAll(".modal-trigger-cv"),
+    mailSuccess: document.querySelectorAll(".modal-trigger-mailSuccess"),
+    mailError: document.querySelectorAll(".modal-trigger-mailError")
 };
 
 // Fonction pour basculer les modales
@@ -108,4 +110,33 @@ function calculerAge(dateNaissance) {
 let dateDeNaissance = "2001-01-15"; // YYYY-MM-DD
 let age = calculerAge(dateDeNaissance);
 
-document.getElementById("age").textContent = age;
+//document.getElementById("age").textContent = age;
+
+// Envoie mail
+$(document).ready(function () {
+    $("#myForm").on("submit", function (e) {
+        e.preventDefault();
+
+        // Récupérer les données du formulaire
+        let formData = $(this).serialize();
+
+        // Envoi des données via AJAX
+        $.ajax({
+            url: "EnvoieMail.php",
+            type: "POST",
+            data: formData,
+            dataType: "json",
+            success: function (response) {
+                if (response.status === "success") {
+                    toggleModal("mailSuccess");
+                } else {
+                    toggleModal("mailError");
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error("Erreur AJAX :", status, error);
+                alert("Une erreur est survenue lors de l'envoi du message.");
+            }
+        });
+    });
+});
