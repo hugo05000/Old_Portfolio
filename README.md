@@ -1,6 +1,6 @@
 # Portfolio
 
-Ceci est mon portfolio, Que j'ai commencé à développer lors de mes années de BTS SIO et que j'ai amélioré durant mon cursus universitaire à la MIAGE de l'université Aix-Marseille.
+Ceci est mon ancien portfolio, Que j'ai commencé à développer lors de mes années de BTS SIO et que j'ai amélioré durant mon cursus universitaire à la MIAGE de l'université Aix-Marseille.
 
 ## A quoi sert-il ?
 
